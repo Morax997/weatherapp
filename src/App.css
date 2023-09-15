@@ -6,3 +6,12 @@
   justify-content: center;
   margin: 15px 0;
 }
+
+.weatherListContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.weatherItem {
+  width: 25%;
+}

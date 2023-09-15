@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Row, Col, FormControl, Button} from 'react-bootstrap';
 import {API_BASE_URL, API_KEY} from "../apis/config";
+import WeatherCard from "./WeatherCard";
 
 
 const CitySelector = () => {
@@ -35,12 +36,27 @@ const CitySelector = () => {
           />
         </Col>
       </Row>
-
       <Row>
         <Col>
           <Button onClick={onSearch}>Check Weather</Button>
         </Col>
       </Row>
+      <div className="weatherListContainer">
+        {
+          results?.list && results.list.map((result, index) => {
+            return <div className="weatherItem">
+              <WeatherCard
+                key={index}
+                dt={result.dt_txt}
+                temp_min={result.main.temp_min}
+                temp_max={result.main.temp_max}
+                main={result.weather[0].main}
+                icon={result.weather[0].icon}
+              />
+            </div>
+          })
+        }
+      </div>
     </>
   );
 

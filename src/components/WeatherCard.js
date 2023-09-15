@@ -5,8 +5,8 @@ import {Card} from 'react-bootstrap';
 const WeatherCard = ({dt, temp_min, temp_max, main, icon}) => {
   const date = new Date(dt)
   return (
-    <Card style={{width:'18rem'}}>
-      <Card.Img variant="top" src={`http://openweathermap.org/img/wn/10d@2x.png`} />
+    <Card style={{width:'100%'}}>
+      <Card.Img variant="top" src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
       <Card.Body>
         <Card.Title>{main}</Card.Title>
         <p>
